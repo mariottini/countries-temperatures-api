@@ -6,7 +6,7 @@ import argparse
 app = Flask(__name__)
 api = Api(app)
 
-API_KEY_OpenWeatherMap = "cb8666fc8be7b92438aca9fcfc5c160c"     # ← INSERT KEY HERE
+API_KEY_OpenWeatherMap = ""     # ← INSERT KEY HERE
 
 continents_list = ["Asia", "Africa", "North America", "South America", "Europe"]
 fav_list = []
@@ -83,7 +83,7 @@ class GetCountryInfo(Resource):
 
 class GetCountryTemp(Resource):
     def get(self, country):
-        API_KEY_OpenWeatherMap = "cb8666fc8be7b92438aca9fcfc5c160c"
+        API_KEY_OpenWeatherMap = ""     # ← INSERT KEY HERE
         coordinates = getCapitalCoordinates(country)
         if coordinates is not None:
             lat, lon = coordinates
@@ -150,7 +150,7 @@ class RemoveFavList(Resource):
 
 class GenerateTempChart(Resource):
     def get(self, country, days):
-        API_KEY_OpenWeatherMap = "cb8666fc8be7b92438aca9fcfc5c160c"
+        API_KEY_OpenWeatherMap = ""     # ← INSERT KEY HERE
         lat, lon = getCapitalCoordinates(country)
         if days < 1:
             return "Inavlid days number"
